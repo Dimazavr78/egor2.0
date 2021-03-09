@@ -134,4 +134,18 @@ public class DayabaswHendel extends Config {
             e.printStackTrace();
         }
     }
+
+    public ResultSet Car_dtp() {
+        ResultSet resultSet = null;
+        String select = "SELECT * FROM " + Const.CAR_DTP_TABLE + " WHERE " + Const.CAR_DTP_DTP_ID + "=?";
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(select);
+            prSt.setString(1, String.valueOf(Const.car_dtp_id));
+            resultSet = prSt.executeQuery();
+
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+        }
+        return resultSet;
+    }
 }

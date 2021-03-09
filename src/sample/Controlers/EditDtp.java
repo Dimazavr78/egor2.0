@@ -24,6 +24,8 @@ public class EditDtp {
 
     @FXML
     private Button update;
+    @FXML
+    private Button awtoDtp;
 
     @FXML
     private TextField class_dtp;
@@ -46,6 +48,21 @@ public class EditDtp {
     @FXML
     void initialize() {
         try {
+
+            awtoDtp.setOnAction(event -> {
+                awtoDtp.getScene().getWindow().hide();
+                FXMLLoader loader=new FXMLLoader();
+                loader.setLocation(getClass().getResource("/sample/FXML/awtoDTP.fxml"));
+                try {
+                    loader.load();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Parent root=loader.getRoot();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.show();
+            });
 
             DayabaswHendel dayabaswHendel = new DayabaswHendel();
             ResultSet resultSet = dayabaswHendel.CheckUpdatetp();

@@ -79,6 +79,35 @@ public class Cheack {
 
     @FXML
     void initialize() {
+
+        vihod.setOnAction(event -> {
+            vihod.getScene().getWindow().hide();
+            FXMLLoader loader=new FXMLLoader();
+            loader.setLocation(getClass().getResource("/sample/FXML/auth_sample.fxml"));
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Parent root=loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        });
+        glav.setOnAction(event -> {
+            glav.getScene().getWindow().hide();
+            FXMLLoader loader=new FXMLLoader();
+            loader.setLocation(getClass().getResource("/sample/FXML/lk_sample.fxml"));
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Parent root=loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        });
         DayabaswHendel dayabaswHendel = new DayabaswHendel();
         ResultSet resultCheck = dayabaswHendel.DTP_ALL();
         try {

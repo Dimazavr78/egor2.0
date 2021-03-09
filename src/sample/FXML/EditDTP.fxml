@@ -23,6 +23,7 @@
                 <TextField fx:id="specsl" layoutX="173.0" layoutY="221.0" />
                 <TextField fx:id="opas" layoutX="138.0" layoutY="296.0" />
                 <TextField fx:id="sosto" layoutX="173.0" layoutY="324.0" />
+            <Button fx:id="awtoDtp" layoutX="600.0" layoutY="40.0" mnemonicParsing="false" text="Авто участвующие в ДТП" />
             </children>
         </AnchorPane>
         <Text layoutX="257.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Обновление ДТП">
